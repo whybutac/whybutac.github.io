@@ -12,6 +12,66 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
+
+
+
+<!--PASSWORD STUFF-->
+	<!-- Password Overlay -->
+<div id="password-overlay">
+  <div class="password-box">
+    <h2>Enter Passcode</h2>
+    <input type="password" id="password-input" placeholder="Passcode" />
+    <button onclick="checkPassword()">Enter</button>
+    <p id="error" style="display:none;">Wrong passcode</p>
+  </div>
+</div>
+
+<style>
+#password-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.password-box {
+  background: #111;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  color: white;
+}
+
+.password-box input {
+  padding: 0.5rem;
+  margin-top: 1rem;
+}
+</style>
+
+<script>
+const PASSCODE = "letmein"; // change this
+
+if (localStorage.getItem("siteUnlocked") === "true") {
+  document.getElementById("password-overlay").style.display = "none";
+}
+
+function checkPassword() {
+  const input = document.getElementById("password-input").value;
+  if (input === PASSCODE) {
+    localStorage.setItem("siteUnlocked", "true");
+    document.getElementById("password-overlay").style.display = "none";
+  } else {
+    document.getElementById("error").style.display = "block";
+  }
+}
+</script>
+
+
+
+	
 	<body class="is-preload">
 
 		<!-- Wrapper -->
