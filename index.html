@@ -16,7 +16,7 @@
 
 
 <!--PASSWORD STUFF-->
-	<!-- Password Overlay -->
+<!-- Password Overlay -->
 <div id="password-overlay">
   <div class="password-box">
     <h2>Enter Passcode</h2>
@@ -30,20 +30,12 @@
 #password-overlay {
   position: fixed;
   inset: 0;
-  background: url("images/Slide2.jpeg") center / cover no-repeat;
+  background: rgba(0,0,0,0.9);
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 9999;
 }
-
-.password-box {
-  background: rgba(0,0,0,0.75);
-  backdrop-filter: blur(6px);
-  padding: 2rem;
-  border-radius: 10px;
-  color: white;
-}
-
 
 .password-box {
   background: #111;
